@@ -15,8 +15,8 @@ module.exports = class Github {
         return new Promise(async(resolve, reject) => {
             try {
                 let issues = await this.api.issues.listForRepo({
-                    owner: 'darkan-report-bot',
-                    repo: 'test-repo',
+                    owner: 'DarkanRS',
+                    repo: 'world-server',
                 });
                 resolve(issues.data);
             } catch (error) {
@@ -28,8 +28,8 @@ module.exports = class Github {
     async createIssue(title, body) {
         try {
             let issue = await this.api.issues.create({
-                owner: 'darkan-report-bot',
-                repo: 'test-repo',
+                owner: 'DarkanRS',
+                repo: 'world-server',
                 title,
                 body
             });
