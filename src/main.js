@@ -90,13 +90,14 @@ client.on('messageReactionAdd', async(reaction, user) => {
     if (reaction.message.id !== reply.id) return;
 
     if (reaction.emoji.name === '✅') {
-        let issue = await github.createIssue(message.content, 'This issue was created by a bot.\n\nCreated by discord user: ' + user.tag + '\n\nMessage: ' + message.content);
         try {
+            let issue = await github.createIssue(message.content, 'This issue was created by a bot.\n\nCreated by discord user: ' + user.tag + '\n\nMessage: ' + message.content);
             user.send(`✅ Issue has been created. Please visit this link to view the issue and add any additional comments: ${issue.html_url}`);
             delete messages[user.id];
             reply.delete();
         } catch (error) {
             console.log(error);
+            user.send('We had an error creating your issue. Please try again later, or message a developer if this problem persists.');
         }
     }
 

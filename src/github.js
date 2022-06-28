@@ -11,18 +11,17 @@ module.exports = class Github {
         }).rest;
     }
 
-    getIssues() {
-        return new Promise(async(resolve, reject) => {
-            try {
-                let issues = await this.api.issues.listForRepo({
-                    owner: 'DarkanRS',
-                    repo: 'world-server',
-                });
-                resolve(issues.data);
-            } catch (error) {
-                reject(error);
-            }
-        });
+    async getIssues() {
+        try {
+            let issues = await this.api.issues.listForRepo({
+                owner: 'DarkanRS',
+                repo: 'world-server',
+            });
+            return issues.data;
+        } catch (error) {
+            console.log(error);
+            return null;
+        }
     }
 
     async createIssue(title, body) {
