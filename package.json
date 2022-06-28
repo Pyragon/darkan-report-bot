@@ -1,0 +1,30 @@
+{
+    "name": "darkan-report-bot",
+    "version": "1.0.0",
+    "description": "Bot to handle bug reports in discord for Darkan",
+    "main": "src/main.js",
+    "scripts": {
+        "start": "node src/main.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/pyragon/darkan-report-bot.git"
+    },
+    "keywords": [
+        "Darkan",
+        "Pyragon",
+        "Report",
+        "Discord",
+        "Bot"
+    ],
+    "author": "Pyragon",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/pyragon/darkan-report-bot/issues"
+    },
+    "homepage": "https://github.com/pyragon/darkan-report-bot#readme",
+    "dependencies": {
+        "@octokit/rest": "^18.12.0",
+        "discord.js": "^13.8.1"
+    }
+}
