@@ -45,9 +45,9 @@ client.on('messageCreate', async(message) => {
         .setColor('#0099ff')
         .setTitle('Would you like to create an issue?')
         .setURL('https://github.com/DarkanRS/world-server/issues')
-        .setAuthor({ name: 'Darkan Report Bot', icon_url: 'https://i.imgur.com/XqQXQZb.png' })
+        .setAuthor({ name: 'Darkan Report Bot', iconURL: 'https://i.imgur.com/2SVGzZE.png' })
         .setDescription('Hello, we have detected that you\'re trying to create a bug report. We do prefer that all issues be reported via Github. Would you like this bot to create the issue for you to discuss the problem you\'re having? Please check the below links for duplicates, and if you\'re not sure, please contact a developer.\n React with the ✅ emoji to create an issue, or the ❌ emoji to cancel.')
-        .setThumbnail('https://i.imgur.com/XqQXQZb.png')
+        .setThumbnail('https://i.imgur.com/2SVGzZE.png')
         .addFields([{
             name: 'Your Report Title',
             value: message.content,
@@ -62,7 +62,7 @@ client.on('messageCreate', async(message) => {
             inline: false,
         }])
         .setTimestamp()
-        .setFooter({ text: 'Darkan Report Bot', icon_url: 'https://i.imgur.com/XqQXQZb.png' });
+        .setFooter({ text: 'Darkan Report Bot', iconURL: 'https://i.imgur.com/2SVGzZE.png' });
 
     let reply = await author.send({ embeds: [embed] });
     reply.react('✅');
